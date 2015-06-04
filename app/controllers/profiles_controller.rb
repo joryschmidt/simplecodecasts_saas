@@ -16,6 +16,8 @@ class ProfilesController < ApplicationController
       flash[:danger] = 'There was some kind of problem. One of us has to be better at this.'
     end
   end
+  def edit
+  end
   
   private
   def profile_params
