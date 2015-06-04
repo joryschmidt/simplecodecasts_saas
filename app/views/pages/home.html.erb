@@ -1,9 +1,10 @@
-<%= link_to 'Create Your Profile', new_user_profile_path(current_user) if current_user %>
+<%= link_to 'Create Your Profile', new_user_profile_path(current_user) if current_user && !current_user.profile %>
 
 <div class='jumbotron text-center'>
   <h1>Welcome to Dev Match</h1>
   <h3>A membership site where entreprenuers can meet developers</h3>
 </div>
+<% unless current_user %>
 <div class='row'>
   <div class='col-md-6'>
     <div class='well'>
@@ -20,3 +21,5 @@
       <%= link_to 'Sign Up with Pro', new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
     </div>
   </div>
+</div>
+<% end %>
