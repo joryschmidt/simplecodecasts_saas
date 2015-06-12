@@ -1,3 +1,4 @@
+/*User show page*/
 .job-title-icon {
   width: 30px;
   height: 30px;
@@ -20,6 +21,21 @@
 .well h3 { 
   margin-top: 0px;
 }
+.user-show-pic {
+  width: 160px;
+  height: 160px;
+}
+/* User index page */
+.well.white-bg {
+  background-color: white;
+}
+.well.row {
+  border-radius: 10px;
+}
+.user-index-pic {
+  border-radius: 50%;
+}
+/* Both */
 img, .well {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
