@@ -4,22 +4,28 @@
 </div>
 <div class='row'>
   <% if user_signed_in? %>
-    <div class='col-md-10 text-center'>
+    <div class='col-md-8 text-center'>
       <div class='well'>
         <h2> The Community </h2>
         <p>Visit the community to connect with other like-minded folks.</p><br />
-        <%= link_to 'Visit The Community', users_path, class: 'btn btn-primary btn-lg btn-block' %>
+        <div class='row'>
+          <div class='col-md-6 col-md-offset-3'>
+            <%= link_to 'Visit The Community', users_path, class: 'btn btn-primary btn-lg btn-block' %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class='col-md-2'>
-      <%= link_to 'Create Your Profile', new_user_profile_path(current_user), class: 'btn btn-primary btn-lg' unless current_user.profile %>
-      <% unless current_user.profile %><br /><br /><p class='text-center'><b>YOU SIMPLY MUST!</b></p><% end %>
-      <% if current_user.profile %>
-        <br />
-        <%= link_to 'Profile', user_path(current_user), class: 'btn btn-success btn-lg'%>
-        <%= link_to 'Edit Profile', edit_user_profile_path(current_user), class: 'btn btn-primary btn-lg' %>
-        <%= link_to 'Delete Profile', '#', class: 'btn btn-danger btn-lg' %>
-      <% end %>
+    <div class='col-md-4 text-center'>
+      <div class='well row'>
+        <h2>Your Profile</h2>
+        <%= link_to 'Create Your Profile', new_user_profile_path(current_user), class: 'btn btn-primary btn-lg' unless current_user.profile %>
+        <% unless current_user.profile %><br /><br /><p class='text-center'><b>YOU SIMPLY MUST!</b></p><% end %>
+        <% if current_user.profile %>
+          <br />
+          <%= link_to 'View', user_path(current_user), class: 'btn btn-success btn-lg'%>
+          <%= link_to 'Edit', edit_user_profile_path(current_user), class: 'btn btn-warning btn-lg' %>
+        <% end %>
+      </div>
     </div>
   <% else %>
     <div class='col-md-6'>
